@@ -1,0 +1,30 @@
+Old patient
+<!-- {{details}} -->
+<table>
+    <tr>
+        <th>Index</th>
+        <th>patId</th>
+        <th>weight </th>
+        <th>problem</th>
+        <th>phonenum</th>
+        <th>date</th>
+        <th>fee</th>
+        <th>
+            Select patient
+        </th>
+    </tr>
+    <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let Ids of id; let e= even; let o= odd; let i=index">
+        <td>{{i}}</td>
+        <td>{{ Ids.patId }}</td>
+        <td>{{ Ids.weight}}</td>
+        <td>{{ Ids.problem | titlecase}}</td>
+        <td>{{ Ids.phonenum}}</td>
+        <td>{{ Ids.date | date}}</td>
+        <td>{{ Ids.fee | currency : 'INR'}}</td>
+        <td>
+            <button class="btn btn-primary" (click)="selectPatient(Ids)">
+                Select</button>
+        </td>
+
+    </tr>
+</table>

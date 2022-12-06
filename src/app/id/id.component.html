@@ -1,0 +1,18 @@
+<h1>This is {{hospitalName}}</h1>
+<div [hidden]="hideDetails">
+    patientName:
+    <div [innerText]="patientName"></div>
+    patientAge:
+    <div [innerText]="age"></div>
+</div>
+
+<div *ngIf="idSelected">
+    {{idSelected |json}}
+</div>
+<div *ngIf="id.oldPatient == true">
+    <helo-id-list [id]="details" >
+        (idSelected)="selectPatient($event)"
+    </helo-id-list>
+</div> 
+
+<button (click)="hide()">hide</button>
